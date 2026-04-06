@@ -10,12 +10,11 @@ const config: Config = {
   future: {
     v4: true,
   },
-
-  url: 'https://clippings.github.io',
-  baseUrl: '/knowledge-base/',
+  url: 'https://wxitzxg.github.io/',
+  baseUrl: '/daily-blog/',
 
   organizationName: 'clippings',
-  projectName: 'knowledge-base',
+  projectName: 'daily-blog',
 
   onBrokenLinks: 'throw',
 
