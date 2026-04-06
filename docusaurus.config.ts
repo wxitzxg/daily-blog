@@ -31,7 +31,12 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: undefined,
         },
-        blog: false,
+        blog: {
+          routeBasePath: '/blog',
+          showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: '全部文章',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -57,6 +62,11 @@ const config: Config = {
           sidebarId: 'main',
           position: 'left',
           label: '文档',
+        },
+        {
+          to: '/blog',
+          label: '精选文章',
+          position: 'left',
         },
         {
           href: 'https://github.com/anthropics/claude-code',
