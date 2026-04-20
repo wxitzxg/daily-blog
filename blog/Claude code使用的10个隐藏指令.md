@@ -1,0 +1,43 @@
+---
+title: "Claude code使用的10个隐藏指令，看完真香"
+source: "https://mp.weixin.qq.com/s/e0A1_gRkQ598bGaFXJKRdw"
+author:
+  - "[[微信公众平台]]"
+published:
+created: 2026-03-24
+description: "\x26lt;a class=\x26quot;wx_topic_link\x26quot; topic-id=\x26quot;\x26quot; style=\x26quot;color: #576B95 !important;\x26quot; data-topic=\x26quot;1\x26quot;\x26gt;#ClaudeCode\x26lt;/a\x26gt; \x0a\x26lt;a class=\x26quot;wx_topic_link\x26quot; topic-id=\x26quot;\x26quot; style=\x26quot;color: #576B95 !important;\x26quot; data-topic=\x26quot;1\x26quot;\x26gt;#AI编程\x0a\x26lt;/a\x26gt;本套知识卡片汇编了 10 项 Claude Code 的进阶命令与高频操作技巧，旨在帮助开发者更高效地管理代码生成、会话状态及任务流。这些内容不仅涵盖了基础操作的延伸，更深入探讨了如何在复杂开发场景中优化 AI 的使用成本与输出质量。\x0a\x0a为便于理解与应用，我们将这 10 项核心技巧归纳为以下四个主要维度：\x0a状态控制与分支管理： 在开发过程中，错误尝试与方案探索是常态。通过 /rewind 命令，开发者可以实现代码或对话的精准回退；利用 /branch，则可在当前上下文基础上分化出独立的测试分支，确保主干思路不受干扰。\x0a\x0a资源调度与质量审查： 针对复杂任务与成本控制的需求，/model opusplan 允许开发者采用“强模型规划、快模型执行”的协作模式；而 /simplify 则提供了一键多维度的代码审查功能，从复用性、质量及效率等方面保障代码规范。\x0a\x0a自动化监控与远程协作： 针对耗时较长的构建或排查任务，/loop 命令可实\x0a现按固定周期的自动巡检；/remote-control 功能则打破了设备限制，支持开发者通过移动端随时接管并监控本地的工作流。\x0a\x0a上下文管理与知识沉淀： 保持会话的纯净度对于长期项目至关重要。/btw 命令允许在不干扰主线程的情况下插入临时提问；/export 支持将高价值的架构推演导出存档；此外，/insights 会基于历史记录提供反向分析报告，协助开发者持续优化工具使用习惯。\x0a\x0a每张知识卡片均包含了具体的命令说明与核心业务价值。建议在日常工作流中逐步引入这些技巧，以更深入地发挥 AI 辅助编程的潜力。"
+tags:
+  - "clippings"
+---
+![](https://mmbiz.qpic.cn/sz_mmbiz_png/XqbtXXRtcSPZylfkIokiaWCric8tr8KPnltgMzGQVc5azq1vtMEZooPmStvw5nmJzT01AmwXwHVCvPtLIqfrRWRy4Y5YCFEAaiaRjz3DU5CINI/0?from=appmsg&wxfrom=12&wx_fmt=png&tp=webp&usePicPrefetch=1&watermark=1) ![](https://mmbiz.qpic.cn/mmbiz_png/XqbtXXRtcSMYIjHXznIomRibPNOiaAg3AwqItQlqWTyfITohkWL9coYIwiaAVxZ6mxp7zZdejJWY0FnJyWKK1oNib9UOxuLBvjLAmpCZuToCbRc/0?from=appmsg&wxfrom=12&wx_fmt=png&tp=webp&watermark=1)
+
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+6. 6
+7. 7
+8. 8
+9. 9
+10. 10
+
+#ClaudeCode  
+#AI编程  
+本套知识卡片汇编了 10 项 Claude Code 的进阶命令与高频操作技巧，旨在帮助开发者更高效地管理代码生成、会话状态及任务流。这些内容不仅涵盖了基础操作的延伸，更深入探讨了如何在复杂开发场景中优化 AI 的使用成本与输出质量。  
+  
+为便于理解与应用，我们将这 10 项核心技巧归纳为以下四个主要维度：  
+状态控制与分支管理： 在开发过程中，错误尝试与方案探索是常态。通过 /rewind 命令，开发者可以实现代码或对话的精准回退；利用 /branch，则可在当前上下文基础上分化出独立的测试分支，确保主干思路不受干扰。  
+  
+资源调度与质量审查： 针对复杂任务与成本控制的需求，/model opusplan 允许开发者采用“强模型规划、快模型执行”的协作模式；而 /simplify 则提供了一键多维度的代码审查功能，从复用性、质量及效率等方面保障代码规范。  
+  
+自动化监控与远程协作： 针对耗时较长的构建或排查任务，/loop 命令可实  
+现按固定周期的自动巡检；/remote-control 功能则打破了设备限制，支持开发者通过移动端随时接管并监控本地的工作流。  
+  
+上下文管理与知识沉淀： 保持会话的纯净度对于长期项目至关重要。/btw 命令允许在不干扰主线程的情况下插入临时提问；/export 支持将高价值的架构推演导出存档；此外，/insights 会基于历史记录提供反向分析报告，协助开发者持续优化工具使用习惯。  
+  
+每张知识卡片均包含了具体的命令说明与核心业务价值。建议在日常工作流中逐步引入这些技巧，以更深入地发挥 AI 辅助编程的潜力。
+
+HootoolAI
+
+向上滑动看下一个
