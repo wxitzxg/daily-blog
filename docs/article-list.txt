@@ -1,0 +1,115 @@
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/30分钟：将Windows终端改造成macOS风格.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Andrej Karpathy Skills - Claude技能包.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Claude Code之父推荐的5个Hooks.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Claude Code新增ComputerUse功能.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Greg Isenberg：23个AI趋势.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Karpathy LLM-Wiki Skill介绍.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Karpathy LLM-Wiki：个人实践与开源.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Karpathy发现的AI编程三大顽疾.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/Paseo：手机远程控制AI编程工具.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/使用Karpathy Skills盘活Obsidian知识库 - 续.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/使用Karpathy Skills盘活Obsidian知识库.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/20260420/手机运行AI编程工具实时管理.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/126 万个真实界面，喂出了这个AI 的设计审美.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/23个AI趋势让我夜不能寐！独角兽创始人Greg Isenberg：1小时建公司、代理经济、环境业务…….md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/6 大 Spec 驱动规范实测：我花两周扒完 BMAD、GStack 源码，结论有点意外.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/6个skill实现一个产品经理的“开挂”一天：从被需求追着跑，到追着需求跑.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/AI 专用无头浏览器，快11倍、内存省9倍.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/AI 编程三剑客：Spec-Kit、OpenSpec、Superpowers 深度对比与实战指南.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/AI 编程工作流选型：Spec-Kit、OpenSpec、Superpowers 深度对比.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/AI代码越改越乱？试试规范驱动编程.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/AI编码实践：从Vibe Coding到SDD-阿里云开发者社区.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Agent Skills 实战：把 PRD 需求文档写成 Skill.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Agent Skills 实战：把产品经理（PDM）常用产出写成 Skill（上）.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Ai 股票工具.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Anthropic说：不要在等下一代模型了，立刻马上做Harness.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/CE + Superpowers 三模型实测：Opus 4.6 - Kimi K2.5 - GLM-5 工程化实践对比.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code + Obsidian 实战，Karpathy 推荐的知识管理方式.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 2.0 终于来了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 全屏渲染来了：长对话不再闪烁，还能用鼠标.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 多智能体编排让 Claude Code 开挂.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 接入 Chrome DevTools：让 AI 直接调试你的网页.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 教程丨一个人干不过来时，怎么让 Claude 分身协作.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 新版 -init 配置新范式：让你的项目一启动就是「满血状态」.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 用到吐血才知道：这5个隐藏命令.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 装完之后，这 9 项设置让它从-能用-变-好用-.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code 长程开发最佳实践指南.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code多智能体编排神器Ruflo开源，Token成本直降75%.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code官方认证最佳实践，开发效率提升3-10倍.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code开启团战模式！你必须要用起来的Agent teams.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code最佳搭档Superpowers：14个技能完整拆解.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude Code第二个神器OpenSpace：让AI自己学会新技能，越用越便宜.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude code使用的10个隐藏指令.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Claude 插件新组合：Superpowers + Ralph-Loop，效果大幅提升，让 AI 编程直接起飞.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Figma MCP + Claude Code 踩坑实践与实战经验.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Get Shit Done：让 Claude Code 真正“能成事-的元提示系统.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/GitHub 36.7k stars：给 Claude 加装永久记忆，让 AI 真正记住你.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Google Stitch + Claude Code，DESIGN.md让Vibe Design更有设计感.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Google Stitch + DESIGN.md + Claude Code 全新应用程序界面设计方式.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Google官方出品：每个开发者都该知道的5种Skill设计模式.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Karpathy推荐的92个顶级信息源，我帮你整理好了，附一键导入教程.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Lovart 把「设计师经验」做成了这5个 Skills.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/MiniMax Office Skills：开源一套生产级办公文档引擎.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/MiniMax 官方把压箱底的硬核技能包开源了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/OpenAI 给 Claude Code 做了个插件？两大 AI 编程工具首次联手实测.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/OpenClaw教程04 - 多Agent与生产部署.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/OpenSwarm：一个人的AI开发军团.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Product Manager Skills 完整使用指南.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/Superpowers+Stitch+Claude Code：创作者中心实战全记录.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/[万字长文预警] Harness 最佳实践：在 Java Spring Boot 项目中落地 OpenSpec + Claude Code.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/agency-orchestrator 完全指南：一句话让 AI 团队帮你干活.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/awesome-design-md × Claude Code：让 AI 写出媲美大厂设计的 UI.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/claude-code-best-practice：26K Stars，Claude Code创造者推荐的最佳实践大全.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/claude-code-best-practice：Claude Code 工作流指南.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/fireworks-tech-graph：用自然语言生成工业级架构图，Claude Code 绘图.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/pdf2skill：一键将专业书籍转换成AI技能，接入Claude Code.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/planning-with-files：3 个文件 + 4 个钩子，让 Claude Code 从-重启即忘-到-永久记忆-.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/superpower跟gstack还没摸透，又来个Google大佬的最佳实践，真学不动了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/一个Markdown文件干掉20000元设计费：Google Stitch 2.0 + Claude Code实战.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/中国版Palantir？OntoFlow 轻量本体建模平台：重新定义企业知识工程的构建方式.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/为了解决小孩拖延症，我肝了2天时间用AI做了这个小程序.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/为什么有人开始用 CE 替代 Superpowers？关键不只是流程，而是“记忆”.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/从IDE到Terminal：适合后端宝宝体质的Claude Code工作流｜得物技术-腾讯云开发者社区-腾讯云.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/兄弟们，这个 github 项目太吊了，有个大神把Claude Code做成了完整的游戏开发工作室，足足用了48个AI智能体，还配上了工作室管理架构.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/写公众号没灵感？这个 50K Star 开源工具把热点主动推到我面前.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/别再手写 CLAUDE.md 了！让 Claude 自己学会｜Claude Code实战指南 03.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/前端开发者的AI UI设计工具箱： Awesome DESIGN + UI-PRO-MAX让AI真正“懂设计”.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/十个顶级 Claude Code Skills，装上就不想卸.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/只做右侧启动第一波行情，主力资金一触即发的指标源码.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/告别数据焦虑：看海量化回测系统现已全面兼容 Tushare、Baostock和miniQMT.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/回测指标构造多因子策略——思路、解析、实证.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/字节开源的 Harness Agent 火爆全网，已狂飙 54k+ Star。.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/字节跳动的Claude code中文使用手册.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/它们都叫 Skills，但根本不是一回事.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/实战：用 Claude Code Agent Teams 做大规模代码重构，一个人顶一个团队.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/实测新模型 KAT-Coder-Pro V2：龙虾是基础，美学才是分水岭.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/带你手搓自己的claude code.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/带新人时，我坚持一个原则：前三个月，允许他犯任何技术错误，但绝不允许犯沟通错误。比如：遇到问题不汇报、进度延迟不沟通，这是底线。.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/开发笔记：Claude Code 开发技能别装那么多插件了，按场景选Superpowers、GSD、PUA、UI-UX Pro Max、Claude Mem、Obsidian等 Skill就够了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/开源 Claude Code 编程宝藏搭档 Oh My Claude Code 完整上手攻略.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/彻底解决 Claude Code 犯蠢问题，最强CC使用技巧分享.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/微软开源AI量化神器Qlib：37.7K Star的量化投资平台，从入门到实战.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/我做了一个精美 PDF 排版 Skill，以生成 100+ 页 Claude Code 系统报告为例.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/我用 Claude Code 写了一部 5 万字小说，投稿七猫，被拒了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/我用Openclaw把海外销售最浪费时间的一步做成了智能体.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/我用错 Claude Code 好几个月，直达这 40 个技巧彻底改变了一切（译）.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/截图即代码！70k Star的开源神器，让前端开发效率狂飙.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/手搓了一个 Skill，让 AI 画出我心目中的流程图.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/把Claude Code用到极致.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/拒绝被封IP！盘点Python获取实时股票行情的几种技术方案.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/放弃Vibe Coding：我用Superpowers+gstack沉淀出一套大幅减少返工的skill组合工作流（附案例）.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/暴降89%！这款开源能让你的Claude Code账单暴降89%.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/每日一 Skills 推荐｜awesome-design-md：GitHub 50k 星，把全网顶级设计系统变成 AI 能读懂的 Markdown.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/每日一 Skills 推荐｜frontend-design + ui-ux-pro-max：让 AI 写出来的页面不再像 AI 写的.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/每日一 Skills 推荐｜web-design-guidelines：每周 13 万次安装，Vercel 把顶级设计师的直觉变成了代码审查.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/玩转 Claude Code：不可或缺的 UX-UI 设计神级插件.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/用claude code 画系统功能模块图和系统架构图.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/睁眼看开源第7期--前端开发者的6个效率利器.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/终于有 AI 模型，认真解决审美问题了。.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/装上这个 Skill，让你的 Claude Code 变成内容生产线，一键搞定出稿、出图、排版、推送…….md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/躺着也能卷：手机远程指挥 Claude Code 干活（全平台）.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/这个 AI 任务管理神器让 Cursor 和 Claude Code 效率翻倍.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/这个开源项目把-做PPT-拆成了10步，每一步都能停下来确认.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/这个开源项目，快把“AI盯盘”做成日更产品了.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/这款神级 Skill 彻底杀疯，公众号-飞书-推文通杀！任何 URL 都能转成 Markdown.md
+/home/zxg/workspace/daily-blog/.claude/worktrees/claude-blog/blog/非涨停的主升浪大阳突破，只做启动第一棒指标源码.md
