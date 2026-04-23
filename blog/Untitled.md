@@ -5,8 +5,8 @@ author:
 published:
 created: 2026-04-02
 description:
-tags:
-  - "clippings"
+category: misc
+tags: [placeholder, 验证码, 无效页面]
 ---
 尝试太多了
 
