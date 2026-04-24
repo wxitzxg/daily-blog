@@ -258,6 +258,7 @@ metadata:
 **大规模重构（20+ 个文件）：**
 
 **方法一：Wave 机制 + Agent Teams**
+
 ```
 Wave 1（并行执行）：
 ├─ Agent A：负责模块 X（文件所有权：src/x/）
@@ -267,6 +268,26 @@ Wave 1（并行执行）：
 Wave 2（依赖 Wave 1）：
 └─ Agent C：负责集成
 ```
+
+**Wave 启动方式：**
+
+使用 Agent 工具并行启动多个子agent：
+
+```markdown
+# Wave 1 并行启动示例
+调用 Agent 工具，在同一消息中启动多个 agent：
+- Agent A: "重构 src/x/ 目录，遵循外科手术式修改原则..."
+- Agent B: "重构 src/y/ 目录，遵循外科手术式修改原则..."
+
+# 等待 Wave 1 完成后
+# Wave 2 启动
+- Agent C: "集成 Wave 1 的变更，运行测试验证..."
+```
+
+**Agent 文件所有权规则：**
+- 每个 Agent 只修改自己负责的目录
+- 跨目录修改需要等待依赖 Wave
+- 共享文件（如类型定义）由最后一个 Wave 处理
 
 **方法二：绞杀植物模式（遗留系统）**
 ```
@@ -284,9 +305,25 @@ Wave 2（依赖 Wave 1）：
 
 ### Step 4.1: 运行测试
 
+**必须运行并看到输出**，根据项目类型选择：
+
 ```bash
-# 必须运行并看到输出
+# Node.js 项目
 npm test
+
+# Python 项目
+pytest
+
+# Go 项目
+go test ./...
+
+# Rust 项目
+cargo test
+
+# Java 项目
+mvn test
+
+# 通用：查看 package.json / Makefile / README 获取测试命令
 ```
 
 ### Step 4.2: 行为对比验证
