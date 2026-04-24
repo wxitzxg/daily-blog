@@ -11,12 +11,13 @@ refactor-toolkit（主技能，编排器）
 ├─ refactor-audit（审计）
 ├─ refactor-decide（决策）
 ├─ refactor-design（方案设计）
+├─ refactor-review（方案审查）
 ├─ refactor-plan（实现计划）
 ├─ refactor-execute（执行）
 └─ refactor-verify（验证）
 ```
 
-**共6个技能，主从结构。**
+**共7个技能，主从结构。**
 
 ---
 
@@ -27,6 +28,7 @@ refactor-toolkit（主技能，编排器）
 | **audit** | 项目结构分析 + 坏味道识别 + 测试覆盖检查 + 场景推荐 + 依赖顺序 | 项目路径 | 审计报告 |
 | **decide** | 场景确认 + 风险评估 + 方法论选择 | 用户请求/审计结果 | 决策报告 |
 | **design** | 架构设计 + 接缝识别 + API映射/Wave划分 | 决策报告 | 重构方案 |
+| **review** | 方法论审核 + 范围审核 + 风险审核 + 接缝审核 + 场景特定审核 | 重构方案 | 审查报告 |
 | **plan** | 任务拆解 + 步骤定义 + 执行准备 | 重构方案 | 实现计划 |
 | **execute** | 外科手术式修改 + 小步循环 | 实现计划 | 代码变更 |
 | **verify** | 测试验证 + 行为对比 + 报告生成 | 代码变更 | 验证报告 |
@@ -181,7 +183,65 @@ refactor-toolkit（主技能，编排器）
 
 ---
 
-### 3.4 refactor-plan（实现计划）
+### 3.4 refactor-review（方案审查）
+
+**职责**：自动全方位审查重构方案，发现问题并提出改进建议。
+
+**流程**：
+```
+1. 方法论审核
+   ├─ 方法论是否适合当前场景？
+   └─ 是否有更优的方法论可选？
+
+2. 范围审核
+   ├─ 重构范围是否合理？
+   ├─ 是否有遗漏的模块？
+   └─ 是否有不必要的重构？
+
+3. 风险审核
+   ├─ 风险等级评估是否准确？
+   ├─ 是否有未识别的风险？
+   └─ 回滚方案是否可行？
+
+4. 接缝审核
+   ├─ 接缝是否可以安全修改？
+   └─ 是否有遗漏的接缝？
+
+5. 场景特定审核
+   ├─ 框架迁移：API映射表是否完整？行为差异是否识别？
+   ├─ 大规模重构：Wave划分是否合理？文件所有权是否清晰？
+   └─ 遗留代码：特性测试是否覆盖关键行为？
+
+6. 输出审查报告
+   ├─ 通过 / 需修改
+   ├─ 问题清单
+   └─ 改进建议
+```
+
+**输出格式**：
+```markdown
+# 方案审查报告
+
+## 审查结果：通过 / 需修改
+
+## 问题清单
+| # | 类别 | 问题描述 | 严重程度 | 改进建议 |
+|---|------|----------|----------|----------|
+| 1 | 范围 | 模块X未纳入范围 | 高 | 建议添加 |
+| 2 | 接缝 | 接缝Y依赖未分析 | 中 | 补充依赖分析 |
+
+## 改进建议
+1. ...
+2. ...
+```
+
+**审查结果处理**：
+- **通过**：自动进入 plan 阶段
+- **需修改**：返回 design 阶段修改方案
+
+---
+
+### 3.5 refactor-plan（实现计划）
 
 **职责**：将方案拆解为可执行的小步骤，准备执行环境。
 
@@ -229,7 +289,7 @@ refactor-toolkit（主技能，编排器）
 
 ---
 
-### 3.5 refactor-execute（执行）
+### 3.6 refactor-execute（执行）
 
 **职责**：按计划执行重构，遵循外科手术式修改原则。
 
@@ -258,7 +318,7 @@ refactor-toolkit（主技能，编排器）
 
 ---
 
-### 3.6 refactor-verify（验证）
+### 3.7 refactor-verify（验证）
 
 **职责**：验证重构结果，确保行为一致。
 
@@ -318,7 +378,7 @@ refactor-audit
     ↓
 用户选择场景
     ↓
-refactor-decide → design → plan → execute → verify
+refactor-decide → design → review → plan → execute → verify
 ```
 
 ### 4.2 入口二：直接重构模式（完整流程）
@@ -337,7 +397,9 @@ refactor-design
     ├─ 接缝识别
     └─ API映射表
     ↓
-【确认点2】方案审核
+refactor-review（自动审查）
+    ├─ 通过 → 继续
+    └─ 需修改 → 返回 design
     ↓ 通过
 refactor-plan
     ├─ 任务拆解
@@ -374,33 +436,10 @@ refactor-verify
 | # | 确认点 | 阶段 | 审核内容 |
 |---|--------|------|----------|
 | 1 | 是否继续？ | decide 后 | 场景 + 风险 + 方法论确认 |
-| 2 | 方案审核 | design 后 | 架构 + 接缝 + API映射/Wave划分审核 |
 
-**方案审核清单**：
-```markdown
-## 方案审核
-
-### 方法论审核
-- [ ] 选择的方法论是否适合当前场景？
-
-### 范围审核
-- [ ] 重构范围是否合理？
-- [ ] 是否有遗漏的模块？
-
-### 风险审核
-- [ ] 风险等级评估是否准确？
-- [ ] 回滚方案是否可行？
-
-### 接缝审核
-- [ ] 接缝是否可以安全修改？
-
-### API映射审核（框架迁移）
-- [ ] API映射表是否完整？
-
-### Wave审核（大规模重构）
-- [ ] Wave划分是否合理？
-- [ ] 文件所有权是否清晰？
-```
+**方案审查由 refactor-review 技能自动完成**，审查结果：
+- **通过**：自动进入 plan 阶段
+- **需修改**：返回 design 阶段修改方案
 
 ---
 
@@ -429,8 +468,15 @@ def refactor_toolkit(user_request):
     else:
         # 完整流程
         design = refactor_design()
-        if not review_design(design):  # 确认点2
-            return
+
+        # 自动审查方案
+        while True:
+            review_result = refactor_review(design)
+            if review_result.passed:
+                break
+            # 需修改：返回 design 修改
+            design = refactor_design(review_result.issues)
+
         refactor_plan()
         refactor_execute()
         refactor_verify()
@@ -474,5 +520,6 @@ def refactor_toolkit(user_request):
 2. **P1**：refactor-audit
    - 支持主动发现模式
 
-3. **P2**：refactor-design + refactor-plan
+3. **P2**：refactor-design + refactor-review + refactor-plan
    - 完善复杂重构流程
+   - refactor-review 确保方案质量
