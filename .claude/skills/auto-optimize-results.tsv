@@ -1,0 +1,4 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-04-24T14:30	baseline	refactor-toolkit	-	78.7	baseline	-	初始评估	full_test
+2026-04-24T14:45	543a263	refactor-toolkit	78.7	96.0	keep	边界条件覆盖	添加异常处理与恢复机制	full_test
+2026-04-24T15:00	e003295	refactor-toolkit	96.0	94.5	keep	指令具体性	添加Agent工具具体调用方式	full_test
