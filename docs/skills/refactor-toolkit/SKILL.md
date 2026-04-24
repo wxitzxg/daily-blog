@@ -271,17 +271,34 @@ Wave 2（依赖 Wave 1）：
 
 **Wave 启动方式：**
 
-使用 Agent 工具并行启动多个子agent：
+在 Claude Code 中，使用 **Agent 工具**并行启动多个子agent：
 
-```markdown
-# Wave 1 并行启动示例
-调用 Agent 工具，在同一消息中启动多个 agent：
-- Agent A: "重构 src/x/ 目录，遵循外科手术式修改原则..."
-- Agent B: "重构 src/y/ 目录，遵循外科手术式修改原则..."
+**单个 Agent 调用示例：**
+```
+Agent(
+  description="重构模块X",
+  prompt="重构 src/x/ 目录，遵循外科手术式修改原则。注意：只修改该目录下的文件。",
+  subagent_type="general-purpose",
+  model="haiku"  # 可选，大规模并行时用 haiku 降低成本
+)
+```
 
-# 等待 Wave 1 完成后
-# Wave 2 启动
-- Agent C: "集成 Wave 1 的变更，运行测试验证..."
+**Wave 1 并行启动（同一消息中调用多次 Agent）：**
+```
+# 同时启动2个Agent，并行执行
+Agent(description="重构routes", prompt="重构 src/routes/...", ...)
+Agent(description="重构middleware", prompt="重构 src/middleware/...", ...)
+```
+
+**等待方式：** 所有 Agent 返回结果后，再启动 Wave 2。
+
+**Wave 完成确认：**
+```bash
+# 检查变更范围
+git status
+
+# 运行测试验证
+npm test  # 或对应项目的测试命令
 ```
 
 **Agent 文件所有权规则：**
@@ -305,6 +322,18 @@ Wave 2（依赖 Wave 1）：
 
 ### Step 4.1: 运行测试
 
+**前置检查：**
+```bash
+# 1. 确认测试文件存在
+# Node.js: **/*.test.* 或 **/*.spec.*
+# Python: **/*_test.py 或 **/test_*.py
+# Go: **/*_test.go
+# Rust: **/*_test.rs 或 tests/**
+
+# 2. 确认测试依赖已安装
+npm install  # 或 pip install -r requirements.txt
+```
+
 **必须运行并看到输出**，根据项目类型选择：
 
 ```bash
@@ -325,6 +354,11 @@ mvn test
 
 # 通用：查看 package.json / Makefile / README 获取测试命令
 ```
+
+**测试失败诊断：**
+1. 先检查是否测试本身的问题（非重构引入）
+2. 运行 `git diff` 对比重构前后变更
+3. 如确认行为变化，回退到上一个commit
 
 ### Step 4.2: 行为对比验证
 
