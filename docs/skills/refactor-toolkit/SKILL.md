@@ -1,71 +1,69 @@
 ---
 name: refactor-toolkit
-description: 重构技能包编排器。根据用户请求自动选择子技能执行流程。支持主动发现和直接重构两种入口模式。触发条件：用户提到"重构"、"迁移"、"改造"、"升级"等关键词。
+description: "Refactoring skill orchestrator. Automatically selects sub-skills based on user request. Supports two entry modes: proactive discovery and direct refactoring."
 metadata:
   pattern: orchestrator
   domain: refactoring
-  version: 3.0.0
+  version: 4.0.0
 ---
 
-# refactor-toolkit（重构技能包编排器）
+# refactor-toolkit (Refactoring Skill Orchestrator)
 
-> 核心原则：外科手术式修改，只碰非碰不可的地方。
+> Core principle: Surgical modification, only touch what must be touched.
 
-## 子技能
+## Sub-skills
 
-| 技能 | 职责 | 触发时机 |
-|------|------|----------|
-| refactor-audit | 审计项目、发现重构机会 | 用户请求分析项目 |
-| refactor-decide | 场景识别、风险评估、方法论选择 | 所有请求的入口 |
-| refactor-design | 方案设计、接缝识别 | 中高风险场景 |
-| refactor-review | 方案审查 | design 完成后自动执行 |
-| refactor-plan | 任务拆解、执行准备 | review 通过后 |
-| refactor-execute | 执行重构 | 低风险直接执行，或 plan 后 |
-| refactor-verify | 测试验证、报告生成 | execute 完成后 |
+| Skill | Responsibility | Mode | Trigger |
+|-------|----------------|------|---------|
+| refactor-audit | Audit project, discover opportunities | Socratic dialogue | User requests analysis |
+| refactor-decide | Scenario identification, risk assessment, methodology selection | Socratic dialogue | Entry point for all requests |
+| refactor-design | Design solution, identify seams | Socratic dialogue | Medium/high risk scenarios |
+| refactor-review | Design review | Automated | Automatically after design |
+| refactor-plan | Task breakdown, execution preparation | Automated | After review passes |
+| refactor-execute | Execute refactoring | Automated | Low risk direct, or after plan |
+| refactor-verify | Test verification, report generation | Automated | After execute completes |
 
-## 两种入口模式
+## Two Entry Modes
 
-### 入口一：主动发现模式
+### Mode 1: Proactive Discovery
 
 ```
-用户："帮我看看哪些需要重构"
+User: "Help me see what needs refactoring"
     ↓
-refactor-audit → 显示审计报告 → 用户选择场景
+refactor-audit → Display audit report → User selects scenario
     ↓
 refactor-decide → design → review → plan → execute → verify
 ```
 
-### 入口二：直接重构模式
+### Mode 2: Direct Refactoring
 
 ```
-用户："把Express迁移到Hono"
+User: "Migrate Express to Hono"
     ↓
-refactor-decide（场景识别 + 风险评估）
+refactor-decide (scenario identification + risk assessment)
     ↓
 ┌─────────────────────────────────────────┐
-│ 低风险 → execute → verify               │
-│ 中高风险 → design → review → plan → execute → verify │
+│ Low risk → execute → verify              │
+│ Medium/high risk → design → review → plan → execute → verify │
 └─────────────────────────────────────────┘
 ```
 
-## 编排逻辑
+## Orchestration Logic
 
 ```python
 def refactor_toolkit(user_request):
-    # 判断入口模式
+    # Determine entry mode
     if is_audit_request(user_request):
         audit_result = refactor_audit(project_path)
         display(audit_result)
         selected = ask_user_to_select(audit_result.scenarios)
         user_request = selected
 
-    # 决策阶段
+    # Decision phase (Socratic dialogue)
     decision = refactor_decide(user_request)
-    if not confirm("是否继续？"):
-        return
 
-    # 根据风险选择流程
-    if decision.risk == '低':
+    # Based on risk select flow
+    if decision.risk == 'Low':
         refactor_execute()
         refactor_verify()
     else:
@@ -80,22 +78,30 @@ def refactor_toolkit(user_request):
         refactor_verify()
 ```
 
-## 确认点
+## Output Directory Structure
 
-| # | 确认点 | 阶段 |
-|---|--------|------|
-| 1 | 是否继续？ | decide 后 |
+```
+docs/refactor/
+├── audits/           # Audit reports
+│   └── YYYY-MM-DD-<project>-audit.md
+├── decisions/        # Decision reports
+│   └── YYYY-MM-DD-<project>-decision.md
+├── designs/          # Design documents
+│   └── YYYY-MM-DD-<project>-design.md
+├── plans/            # Execution plans
+│   └── YYYY-MM-DD-<project>-plan.md
+└── reports/          # Verification reports
+    └── YYYY-MM-DD-<project>-report.md
+```
 
-## 参考资源
+## Reference Resources
 
-详见 `references/` 和 `assets/` 目录：
-
-| 文件 | 用途 |
-|------|------|
-| `references/code-smells.md` | 代码坏味道识别 |
-| `references/refactor-techniques.md` | 重构手法详解 |
-| `references/surgical-modification-rules.md` | 外科手术式修改规则 |
-| `references/common-scenarios.md` | 常见场景指南 |
-| `references/refactor-checklist.md` | 检查清单 |
-| `assets/refactor-plan-template.md` | 计划模板 |
-| `assets/refactor-report-template.md` | 报告模板 |
+| File | Purpose |
+|------|---------|
+| `references/code-smells.md` | Code smell identification (Fowler) |
+| `references/refactor-techniques.md` | Refactoring techniques |
+| `references/surgical-modification-rules.md` | Surgical modification rules |
+| `references/common-scenarios.md` | Common scenario guide |
+| `references/refactor-checklist.md` | Verification checklist |
+| `assets/refactor-plan-template.md` | Plan template |
+| `assets/refactor-report-template.md` | Report template |
