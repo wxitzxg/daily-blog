@@ -56,6 +56,21 @@ metadata:
 
 ### Step 4: 输出重构方案
 
+**生成步骤：**
+
+1. 确认重构场景类型（框架迁移/大规模重构/遗留代码）
+2. 编写目标架构描述
+3. 完成接缝清单表格
+4. 根据场景类型补充：
+   - 框架迁移 → API映射表
+   - 大规模重构 → Wave划分
+   - 遗留代码 → 双跑架构
+5. 列出风险点和缓解措施
+
+**输出位置：**
+- 文件路径：`docs/plans/refactor-plan-<timestamp>.md`
+- 使用模板：`assets/refactor-plan-template.md`
+
 ## 输出格式
 
 ```markdown
