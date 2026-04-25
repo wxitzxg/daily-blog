@@ -1,260 +1,225 @@
 ---
 name: refactor-decide
-description: 重构决策技能。确认重构场景、评估风险等级、选择方法论、决定执行流程。触发条件：用户提到"重构"、"迁移"、"改造"、"升级"等关键词。
+description: "You MUST use this after audit - analyzes refactoring scenarios, assesses risks, selects methodology through Socratic dialogue. Outputs a decision report with clear recommendations."
 metadata:
   pattern: decision
   domain: refactoring
   parent: refactor-toolkit
 ---
 
-# refactor-decide（重构决策）
+# refactor-decide (Refactoring Decision)
 
-> 铁律：先判断是否需要重构，再决定怎么重构。
+> First determine if refactoring is needed, then decide how to refactor.
 
-## 触发条件
+## HARD-GATE
 
-- 用户直接提出重构请求
-- refactor-audit 输出审计报告后
+Do NOT proceed to refactor-design until you have presented the decision report and the user has approved it. This applies to EVERY decision regardless of perceived simplicity.
 
----
+## Anti-Pattern: "Just Start Refactoring"
 
-## 流程
+Every decision goes through this process. A quick fix, a straightforward migration, an obvious improvement — all of them. "Obvious" refactoring decisions are where wrong assumptions cause the most rework. The decision can be quick (a few focused questions for truly simple scenarios), but you MUST present the decision and get approval.
 
-### Step 0: 判断是否需要澄清
+## Checklist
 
-**检查用户请求是否明确：**
+You MUST create a task for each of these items and complete them in order:
 
-| 明确 | 模糊 |
-|------|------|
-| "把 Express 迁移到 Hono" | "优化一下" |
-| "Vue2 升级到 Vue3" | "重构这个模块" |
-| "统一代码风格" | "改一下代码" |
+1. **Understand decision context** — review audit report, understand user's refactoring goal
+2. **Clarify refactoring intent** — one question at a time, understand purpose/constraints/success criteria
+3. **Identify refactoring scenario** — classify the type of refactoring needed
+4. **Assess risk level** — evaluate complexity, test coverage, impact scope
+5. **Select methodology** — propose approach with reasoning, get user confirmation
+6. **Determine execution flow** — decide if simplified or full flow needed
+7. **Write decision report** — save to `docs/refactor/decisions/YYYY-MM-DD-<project>-decision.md`
+8. **Report self-review** — check for completeness, risk accuracy, methodology fit
+9. **User reviews report** — ask user to review before proceeding
+10. **Transition to design** — invoke refactor-design for high-risk, or refactor-execute for low-risk
 
-**模糊请求 → 执行澄清流程（Step 0.1）**
-**明确请求 → 直接进入 Step 1**
+## Process Flow
 
----
+```dot
+digraph decide {
+    "Understand decision context" [shape=box];
+    "Clarify refactoring intent" [shape=box];
+    "Identify scenario" [shape=box];
+    "Present scenario" [shape=box];
+    "User confirms scenario?" [shape=diamond];
+    "Assess risk level" [shape=box];
+    "Present risk assessment" [shape=box];
+    "User accepts risk?" [shape=diamond];
+    "Select methodology" [shape=box];
+    "Present methodology" [shape=box];
+    "User accepts methodology?" [shape=diamond];
+    "Determine execution flow" [shape=box];
+    "Write decision report" [shape=box];
+    "Report self-review" [shape=box];
+    "User reviews report?" [shape=diamond];
+    "High risk?" [shape=diamond];
+    "Invoke refactor-design" [shape=doublecircle];
+    "Invoke refactor-execute" [shape=doublecircle];
 
-### Step 0.1: 场景澄清（模糊请求时）
-
-<HARD-GATE>
-一次只问一个问题，等待用户回答后再问下一个。
-</HARD-GATE>
-
-#### Q1: 确认重构目标
-
-```
-你提到"[用户原始请求]"，具体想达到什么效果？
-
-| 选项 | 说明 |
-|------|------|
-| A. 性能优化 | 提升执行速度、减少资源占用 |
-| B. 代码简化 | 减少复杂度、提高可读性 |
-| C. 结构重组 | 改善架构、模块划分 |
-| D. 技术升级 | 迁移框架、升级依赖 |
-| E. 其他 | 请详细说明 |
-
-请选择 A/B/C/D/E。
-```
-
-#### Q2: 确认重构范围（如需要）
-
-```
-重构范围是？
-
-| 选项 | 说明 |
-|------|------|
-| A. 单个文件/函数 | 小范围 |
-| B. 单个模块 | 中范围 |
-| C. 多个模块 | 大范围 |
-| D. 整个项目 | 全量 |
-
-请选择 A/B/C/D。
-```
-
-#### Q3: 确认约束条件（如需要）
-
-```
-有什么约束条件？
-
-| 选项 | 说明 |
-|------|------|
-| A. 必须保持 API 兼容 | 不能影响调用方 |
-| B. 必须零停机 | 系统不能中断 |
-| C. 时间紧迫 | 需要快速完成 |
-| D. 无特殊约束 | 按最佳实践执行 |
-
-请选择 A/B/C/D，可多选。
+    "Understand decision context" -> "Clarify refactoring intent";
+    "Clarify refactoring intent" -> "Identify scenario";
+    "Identify scenario" -> "Present scenario";
+    "Present scenario" -> "User confirms scenario?";
+    "User confirms scenario?" -> "Identify scenario" [label="no, re-analyze"];
+    "User confirms scenario?" -> "Assess risk level" [label="yes"];
+    "Assess risk level" -> "Present risk assessment";
+    "Present risk assessment" -> "User accepts risk?";
+    "User accepts risk?" -> "Assess risk level" [label="no, adjust scope"];
+    "User accepts risk?" -> "Select methodology" [label="yes"];
+    "Select methodology" -> "Present methodology";
+    "Present methodology" -> "User accepts methodology?";
+    "User accepts methodology?" -> "Select methodology" [label="no, discuss alternatives"];
+    "User accepts methodology?" -> "Determine execution flow" [label="yes"];
+    "Determine execution flow" -> "Write decision report";
+    "Write decision report" -> "Report self-review";
+    "Report self-review" -> "User reviews report?";
+    "User reviews report?" -> "Write decision report" [label="changes requested"];
+    "User reviews report?" -> "High risk?" [label="approved"];
+    "High risk?" -> "Invoke refactor-design" [label="yes"];
+    "High risk?" -> "Invoke refactor-execute" [label="no"];
+}
 ```
 
----
+**The terminal state is invoking refactor-design (high risk) or refactor-execute (low risk).**
 
-### Step 1: 场景识别
+## The Process
 
-根据用户描述（或澄清结果）识别重构场景：
+**Understanding the context:**
 
-| 场景 | 关键词 | 风险等级 |
-|------|--------|----------|
-| 小范围优化 | "优化"、"清理"、"简化" | 低 |
-| 代码风格统一 | "统一风格"、"规范化"、"格式化" | 低 |
-| 技术栈升级 | "升级"、"迁移到"、"换成" | 中 |
-| 框架迁移 | "Express→Hono"、"Vue2→Vue3" | 高 |
-| 遗留代码重构 | "遗留"、"老代码"、"技术债" | 高 |
-| 大规模重构 | "重构整个"、"全部重写" | 高 |
+- Review the audit report from previous step
+- Understand what problems were identified
+- Note user's stated refactoring goals
 
----
+**Clarifying the intent:**
 
-### Step 2: 风险评估
+- Ask questions one at a time to refine the refactoring goal
+- Prefer multiple choice questions when possible
+- Focus on understanding: purpose, constraints, success criteria
+- Key questions:
+  - "What is the primary goal of this refactoring? A. Performance optimization B. Code simplification C. Structural reorganization D. Technology upgrade"
+  - "What constraints exist? A. Must maintain API compatibility B. Must have zero downtime C. Time pressure D. No special constraints"
+  - "What are the success criteria?"
 
-| 风险等级 | 条件 | 测试要求 |
-|----------|------|----------|
-| 低 | 单文件、逻辑简单 | 有测试即可 |
-| 中 | 多文件、逻辑复杂 | 80%+ 覆盖 |
-| 高 | 核心模块、框架迁移 | 100% 覆盖 |
-| 极高 | 数据库变更、架构重写 | 全量回归 |
+**Identifying the scenario:**
 
-**确认点：风险等级确认**
+- Classify the refactoring scenario based on user input and audit findings:
 
-```
-## 风险评估结果
+| Scenario | Keywords | Typical Risk |
+|----------|----------|--------------|
+| Small-scale optimization | "optimize", "clean up", "simplify" | Low |
+| Code style unification | "unify style", "standardize" | Low |
+| Tech stack upgrade | "upgrade", "update dependencies" | Medium |
+| Framework migration | "migrate to", "switch to" | High |
+| Legacy code refactoring | "legacy", "old code", "technical debt" | High |
+| Large-scale refactoring | "refactor entire", "complete rewrite" | High |
 
-- 风险等级：[高]
-- 原因：涉及核心模块、框架迁移
-- 测试要求：100% 测试覆盖
+- Present the identified scenario and ask: "Identified as [scenario]. Is this correct?"
 
-⚠️ 高风险重构需要注意：
-- 需要完整流程（design → review → plan → execute → verify）
-- 建议创建备份分支
-- 建议分阶段执行
+**Assessing risk:**
 
-是否接受此风险评估？[接受/调整范围/取消]
-```
+- Evaluate risk level based on multiple factors:
 
----
+| Risk Level | Conditions | Test Requirement |
+|------------|------------|------------------|
+| Low | Single file, simple logic, has tests | Tests pass |
+| Medium | Multiple files, complex logic | 80%+ coverage |
+| High | Core modules, framework migration | 100% coverage |
+| Critical | Database changes, architecture rewrite | Full regression |
 
-### Step 3: 方法论选择
+- Present risk assessment with reasoning and ask: "Risk assessed as [level]. Do you accept?"
 
-| 场景 | 推荐方法论 |
-|------|-----------|
-| 小范围优化 | 童子军规则 |
-| 代码风格统一 | ESLint + Prettier |
-| 技术栈升级 | 分阶段迁移 |
-| 框架迁移 | 渐进式迁移 |
-| 遗留代码重构 | 绞杀植物模式 |
-| 大规模重构 | Wave机制 |
+**Selecting methodology:**
 
-**确认点：方法论确认（高风险场景）**
+- Propose methodology based on scenario:
 
-```
-## 方法论建议
+| Scenario | Recommended Methodology |
+|----------|------------------------|
+| Small-scale optimization | Boy Scout Rule |
+| Code style unification | ESLint + Prettier |
+| Tech stack upgrade | Phased Migration |
+| Framework migration | Progressive Migration |
+| Legacy code refactoring | Strangler Fig Pattern |
+| Large-scale refactoring | Wave Mechanism |
 
-推荐使用：[渐进式迁移]
+- Present with alternatives and ask: "Recommend using [methodology]. Do you accept?"
 
-原因：
-- 框架迁移风险高
-- 渐进式迁移可以逐步验证
-- 出问题可以快速回滚
+**Determining execution flow:**
 
-其他可选方案：
-| 方案 | 优缺点 |
-|------|--------|
-| 一次性切换 | ✅ 快 ❌ 风险高 |
-| 绞杀植物模式 | ✅ 平衡 ❌ 周期长 |
+- Based on risk level:
+  - Low → Simplified flow: execute → verify
+  - Medium/High/Critical → Full flow: design → review → plan → execute → verify
 
-是否采用推荐的方法论？[采用/选择其他]
-```
+## After the Decision
 
----
+**Documentation:**
 
-### Step 4: 流程建议
+- Write the decision report to `docs/refactor/decisions/YYYY-MM-DD-<project>-decision.md`
+- Commit the report to git
 
-根据风险等级决定执行流程：
+**Report Self-Review:**
+After writing the report, look at it with fresh eyes:
 
-| 风险等级 | 流程 |
-|----------|------|
-| 低 | 简化流程：decide → execute → verify |
-| 中/高/极高 | 完整流程：decide → design → review → plan → execute → verify |
+1. **Scenario accuracy:** Does the scenario classification match user's intent?
+2. **Risk completeness:** Did I consider all risk factors? Test coverage, impact scope, reversibility?
+3. **Methodology fit:** Is the proposed methodology appropriate for the scenario and risk level?
+4. **Flow correctness:** Does the execution flow match the risk level?
 
----
+Fix any issues inline. No need to re-review — just fix and move on.
 
-## 输出格式
+**User Review Gate:**
+After the self-review passes, ask the user to review the written report:
 
-```markdown
-# 重构决策报告
+> "Decision report saved to `docs/refactor/decisions/<filename>.md`. Please review and let me know if you want to make any changes before we proceed to the next phase."
 
-## 场景识别
-- 场景：[场景名称]
-- 风险等级：[低/中/高/极高]
+Wait for the user's response. If they request changes, make them and re-run the self-review. Only proceed once the user approves.
 
-## 方法论选择
-- 推荐方法论：[方法论名称]
-- 原因：[简述原因]
+**Next Step:**
 
-## 流程建议
-- 推荐流程：[简化流程 / 完整流程]
-- 预计涉及文件：[数量]
+- If high risk: Invoke refactor-design skill
+- If low risk: Invoke refactor-execute skill
+- Do NOT invoke any other skill.
 
-## 确认事项
-- [ ] 风险等级已确认
-- [ ] 方法论已确认
-- [ ] 流程已确认
+## Key Principles
 
-## 下一步
-请确认是否继续重构？[确认/修改/取消]
-```
+- **One question at a time** - Don't overwhelm with multiple questions
+- **Risk drives flow** - Risk level determines execution flow
+- **Methodology grounded** - Every recommendation references established methodology
+- **User drives decisions** - Let user's constraints and goals guide the decision
+- **Be flexible** - Go back and re-analyze when user questions a conclusion
 
----
+## Methodology Reference
 
-## 用户确认
+### Boy Scout Rule
+> Leave the campground cleaner than you found it.
 
-<HARD-GATE>
-**必须**等待用户确认后才可进入下一阶段。
+Improve a little bit of surrounding code each time you modify it. Suitable for small-scale optimization.
 
-收到用户确认后才可：
-- 低风险 → 调用 refactor-execute
-- 中高风险 → 调用 refactor-design
-</HARD-GATE>
+### Phased Migration
+> Upgrade in stages to reduce risk.
 
----
+1. Assess upgrade impact scope
+2. Upgrade non-core dependencies
+3. Upgrade core dependencies
+4. Fix breaking changes
 
-## 方法论说明
+### Progressive Migration
+> Run old and new frameworks in parallel, switch gradually.
 
-### 童子军规则
-> 离开营地时比来时更干净。
+1. Establish dual-run (old and new in parallel)
+2. Migrate modules (starting with non-core modules)
+3. Full switch (with monitoring and rollback plan)
 
-每次修改代码时，顺便改善一点点周边代码。适用于小范围优化，不需要专门规划。
+### Strangler Fig Pattern
+> Build new features with new architecture, migrate old features gradually.
 
-### ESLint + Prettier
-> 自动化工具优先。
+- New features → New architecture
+- Old features → Gradual migration
+- Eventually → Old system completely replaced
 
-使用 linter 和 formatter 自动统一代码风格，无需人工逐行修改。
+### Wave Mechanism
+> Execute independent tasks in parallel, dependent tasks sequentially.
 
-### 分阶段迁移
-> 分步升级，降低风险。
-
-1. 评估升级影响范围
-2. 升级非核心依赖
-3. 升级核心依赖
-4. 修复 breaking changes
-
-### 渐进式迁移
-> 新旧框架并行运行，逐步切换。
-
-1. 建立双跑（新旧并行）
-2. 模块迁移（非核心模块开始）
-3. 全量切换（监控 + 回滚方案）
-
-### 绞杀植物模式
-> 新功能用新架构，老功能逐步替换。
-
-不进行大爆炸式重写，保持系统始终可用：
-- 新功能 → 新架构
-- 老功能 → 逐步迁移
-- 最终 → 老系统被完全替换
-
-### Wave机制
-> 并行执行独立任务，串行执行依赖任务。
-
-- Wave 1：多个 Agent 并行处理独立模块
-- Wave 2：处理依赖 Wave 1 的任务
-- 每个 Wave 完成后验证
+- Wave 1: Multiple agents process independent modules in parallel
+- Wave 2: Process tasks that depend on Wave 1
+- Verify after each Wave completes
